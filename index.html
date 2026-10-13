@@ -17,7 +17,7 @@
         <a href="#skills">skills</a>
         <a href="#projects">projects</a>
         <a href="#youtube">youtube</a>
-        <a href="#contact">contact</a>
+        <button class="nav-contact" type="button" data-open-contact>contact</button>
       </nav>
     </div>
   </header>
@@ -31,7 +31,7 @@
       <div class="hero-actions">
         <a class="button primary" href="#projects">Lihat Project →</a>
         <a class="button" href="#about">Tentang Saya</a>
-        <a class="button" href="#contact">Hubungi Saya</a>
+        <button class="button" type="button" data-open-contact>Hubungi Saya</button>
       </div>
     </section>
 
@@ -119,10 +119,13 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container contact-grid">
+    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
+      <div class="contact-dialog-heading">
+        <h2 class="section-title" id="contact-title">contact-me</h2>
+        <button class="contact-close" type="button" aria-label="Tutup popup">&times;</button>
+      </div>
+      <div class="contact-grid">
         <div>
-          <h2 class="section-title">contact-me</h2>
           <p class="contact-copy">Punya ide project atau ingin berkolaborasi? Kirim pesan — saya akan senang mendengarnya.</p>
           <div class="contact-list">
             <div><span>email:</span> <a href="mailto:farhanbukhoriaja@gmail.com">farhanbukhoriaja@gmail.com</a></div>
@@ -138,7 +141,7 @@
           <p class="form-note">Tombol kirim akan membuka aplikasi email dengan alamat tujuan yang sudah terisi.</p>
         </form>
       </div>
-    </section>
+    </dialog>
   </main>
 
   <footer>
