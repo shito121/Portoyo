@@ -235,6 +235,9 @@
     .contact-list { display: grid; gap: 8px; margin-top: 20px; font: 13px var(--mono); }
     .contact-list .contact-social { display: flex; align-items: center; gap: 8px; }
     .contact-icon { width: 17px; height: 17px; flex: 0 0 17px; fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+    .contact-icon-link { display: inline-flex; border-radius: 3px; }
+    .contact-icon-link:hover { opacity: 0.72; }
+    .contact-icon-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
     .contact-icon .icon-dot { fill: var(--blue); stroke: none; }
     .contact-icon.github-contact-icon { stroke: var(--text); }
     .contact-icon.youtube-icon { stroke: #ff6b6b; }
