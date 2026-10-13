@@ -232,8 +232,8 @@
     .contact-close:hover { border-color: #52617c; color: var(--text); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .contact-copy { color: var(--muted); }
-    .contact-list { display: grid; gap: 8px; margin-top: 20px; font: 13px var(--mono); }
-    .contact-list .contact-social { display: flex; align-items: center; gap: 8px; }
+    .contact-list { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+    .contact-list .contact-social { display: flex; align-items: center; }
     .contact-icon { width: 17px; height: 17px; flex: 0 0 17px; fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
     .contact-icon-link { display: inline-flex; border-radius: 3px; }
     .contact-icon-link:hover { opacity: 0.72; }
