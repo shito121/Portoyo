@@ -144,6 +144,7 @@
       padding-block: clamp(72px, 10vh, 120px);
       border-top: 1px solid var(--border);
     }
+    #skills { align-items: start; padding-top: clamp(52px, 7vh, 80px); }
     .section-title { margin: 0 0 28px; font-size: 22px; letter-spacing: -0.03em; }
     .section-title::before { content: "## "; color: #65718a; }
     .about-grid { display: grid; grid-template-columns: minmax(240px, 300px) 1fr; gap: clamp(40px, 7vw, 88px); align-items: center; }
@@ -174,21 +175,25 @@
       border-radius: 10px;
       background: linear-gradient(145deg, rgb(255 255 255 / 2%), transparent 60%), var(--surface);
     }
-    .skill-group { min-height: 150px; padding: 24px; }
-    .group-label { margin: 0 0 13px; font-size: 12px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-group { min-height: 230px; padding: 28px; }
+    .group-label { margin: 0 0 22px; font-size: 14px; }
+    .chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); gap: 12px; }
     .chip {
-      display: inline-flex;
-      min-height: 34px;
+      display: flex;
+      min-height: 112px;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 10px;
       border: 1px solid #303746;
-      border-radius: 5px;
+      border-radius: 9px;
       color: #c8ced9;
-      font: 12px var(--mono);
+      font: 13px var(--mono);
+      text-align: center;
+      background: rgb(255 255 255 / 2%);
     }
-    .skill-icon { width: 18px; height: 18px; object-fit: contain; }
+    .skill-icon { width: 40px; height: 40px; object-fit: contain; }
     .skill-icon.github-icon { filter: invert(1); }
     .skill-icon.uiux-icon { fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
     .project-grid, .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -307,10 +312,14 @@
       .hero-copy { font-size: 15px; }
       .hero-role { font-size: 13px; }
       .section { min-height: calc(100vh - 100px); min-height: calc(100svh - 100px); padding-block: 56px; }
+      #skills { padding-top: 40px; }
       .about-grid { grid-template-columns: 1fr; gap: 22px; }
       .profile-card { width: min(190px, 55vw); }
       .skill-groups, .project-grid, .contact-grid { grid-template-columns: 1fr; }
-      .skill-group { min-height: 0; padding: 20px; }
+      .skill-group { min-height: 0; padding: 22px; }
+      .chips { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); }
+      .chip { min-height: 100px; }
+      .skill-icon { width: 36px; height: 36px; }
       .project-card { min-height: 0; padding: 24px; }
       .video-grid { grid-template-columns: 1fr; }
       .video-thumb { min-height: 220px; }
