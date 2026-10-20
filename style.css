@@ -15,6 +15,7 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
+      isolation: isolate;
       margin: 0;
       background:
         radial-gradient(ellipse 75% 55% at 12% 4%, rgb(67 102 169 / 16%), transparent 75%),
@@ -26,6 +27,30 @@
       background-size: auto, auto, auto, 56px 56px, 56px 56px, auto;
       color: var(--text);
       font: 16px/1.7 var(--sans);
+    }
+    body::before, body::after {
+      position: fixed;
+      z-index: -1;
+      width: 30rem;
+      aspect-ratio: 1;
+      border: 1px solid rgb(120 169 255 / 14%);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+    body::before {
+      top: 16%;
+      right: -15rem;
+      background: radial-gradient(circle at 35% 35%, rgb(120 169 255 / 12%), transparent 68%);
+      box-shadow: 0 0 0 42px rgb(120 169 255 / 3%), 0 0 0 84px rgb(120 169 255 / 2%);
+    }
+    body::after {
+      bottom: 5%;
+      left: -17rem;
+      width: 34rem;
+      border-color: rgb(134 215 161 / 12%);
+      background: radial-gradient(circle at 65% 40%, rgb(134 215 161 / 9%), transparent 68%);
+      box-shadow: 0 0 0 48px rgb(134 215 161 / 2%), 0 0 0 96px rgb(134 215 161 / 1%);
     }
     a { color: inherit; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
