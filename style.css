@@ -192,8 +192,18 @@
       font: 13px var(--mono);
       text-align: center;
       background: rgb(255 255 255 / 2%);
+      transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
     }
-    .skill-icon { width: 40px; height: 40px; object-fit: contain; }
+    .skill-icon { width: 40px; height: 40px; object-fit: contain; transition: transform 180ms ease; }
+    @media (hover: hover) {
+      .chip:hover {
+        transform: translateY(-5px);
+        border-color: rgb(120 169 255 / 55%);
+        background-color: rgb(120 169 255 / 8%);
+        box-shadow: 0 10px 28px rgb(0 0 0 / 22%), 0 0 18px rgb(72 125 230 / 12%);
+      }
+      .chip:hover .skill-icon { transform: scale(1.12); }
+    }
     .skill-icon.github-icon { filter: invert(1); }
     .skill-icon.uiux-icon { fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
     .project-grid, .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
