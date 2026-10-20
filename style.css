@@ -18,9 +18,9 @@
       isolation: isolate;
       margin: 0;
       background:
-        radial-gradient(ellipse 75% 55% at 12% 4%, rgb(67 102 169 / 16%), transparent 75%),
-        radial-gradient(ellipse 55% 45% at 92% 36%, rgb(118 78 163 / 9%), transparent 75%),
-        radial-gradient(ellipse 70% 45% at 52% 100%, rgb(40 95 106 / 8%), transparent 78%),
+        radial-gradient(ellipse 75% 55% at 12% 4%, rgb(44 92 180 / 20%), transparent 75%),
+        radial-gradient(ellipse 55% 45% at 92% 36%, rgb(45 72 155 / 15%), transparent 75%),
+        radial-gradient(ellipse 70% 45% at 52% 100%, rgb(20 50 105 / 14%), transparent 78%),
         linear-gradient(rgb(120 169 255 / 2%) 1px, transparent 1px),
         linear-gradient(90deg, rgb(120 169 255 / 2%) 1px, transparent 1px),
         var(--bg);
@@ -28,29 +28,27 @@
       color: var(--text);
       font: 16px/1.7 var(--sans);
     }
-    body::before, body::after {
+    body::before {
       position: fixed;
       z-index: -1;
-      width: 30rem;
-      aspect-ratio: 1;
-      border: 1px solid rgb(120 169 255 / 14%);
-      border-radius: 50%;
+      inset: 0;
+      background-image: radial-gradient(circle, rgb(160 193 255 / 28%) 1px, transparent 1.3px);
+      background-size: 24px 24px;
       content: "";
       pointer-events: none;
     }
-    body::before {
-      top: 16%;
-      right: -15rem;
-      background: radial-gradient(circle at 35% 35%, rgb(120 169 255 / 12%), transparent 68%);
-      box-shadow: 0 0 0 42px rgb(120 169 255 / 3%), 0 0 0 84px rgb(120 169 255 / 2%);
-    }
     body::after {
-      bottom: 5%;
-      left: -17rem;
-      width: 34rem;
-      border-color: rgb(134 215 161 / 12%);
-      background: radial-gradient(circle at 65% 40%, rgb(134 215 161 / 9%), transparent 68%);
-      box-shadow: 0 0 0 48px rgb(134 215 161 / 2%), 0 0 0 96px rgb(134 215 161 / 1%);
+      position: fixed;
+      z-index: -1;
+      top: 8%;
+      right: -18rem;
+      width: 44rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgb(40 100 220 / 18%), rgb(25 61 145 / 8%) 38%, transparent 70%);
+      content: "";
+      filter: blur(18px);
+      pointer-events: none;
     }
     a { color: inherit; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
