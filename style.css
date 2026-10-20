@@ -165,6 +165,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 42%;
     }
     .about-copy { color: #c0c6d2; }
     .about-copy p:first-child { margin-top: 0; }
@@ -233,16 +234,14 @@
       opacity: .8;
       pointer-events: none;
     }
-    .game-emblem {
+    .game-art {
       position: relative;
-      width: 100px;
-      height: 100px;
-      fill: none;
-      stroke: var(--game-accent);
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      filter: drop-shadow(0 0 12px var(--game-glow));
+      display: block;
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: contain;
+      transition: transform 180ms ease;
     }
     .game-genshin { --game-accent: #e9c98b; --game-glow: rgb(212 162 76 / 18%); }
     .game-wuthering { --game-accent: #94d8e1; --game-glow: rgb(55 162 180 / 18%); }
@@ -255,6 +254,7 @@
         border-color: var(--game-accent);
         box-shadow: 0 14px 36px rgb(0 0 0 / 25%), 0 0 24px var(--game-glow);
       }
+      .game-card:hover .game-art { transform: scale(1.04); }
     }
     .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .section-heading {
@@ -373,7 +373,7 @@
       .skill-groups, .contact-grid { grid-template-columns: 1fr; }
       .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
       .game-card { min-height: 165px; padding: 18px 12px; }
-      .game-emblem { width: 82px; height: 82px; }
+      .game-art { height: 160px; }
       .skill-group { min-height: 0; padding: 22px; }
       .chips { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); }
       .chip { min-height: 100px; }
