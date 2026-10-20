@@ -170,7 +170,7 @@
     .about-copy p:first-child { margin-top: 0; }
     .about-copy a { color: var(--blue); text-decoration-color: #526c99; text-underline-offset: 3px; }
     .skill-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .skill-group, .project-card, .video-card {
+    .skill-group, .video-card {
       border: 1px solid var(--border);
       border-radius: 10px;
       background: linear-gradient(145deg, rgb(255 255 255 / 2%), transparent 60%), var(--surface);
@@ -206,12 +206,70 @@
     }
     .skill-icon.github-icon { filter: invert(1); }
     .skill-icon.uiux-icon { fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
-    .project-grid, .video-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-    .project-card { min-height: 220px; padding: 32px; }
-    .project-card h3 { margin: 0 0 9px; font-size: 18px; }
-    .project-card p { min-height: 54px; margin: 0 0 18px; color: var(--muted); font-size: 14px; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .project-tags span { color: var(--green); font: 11px var(--mono); }
+    .game-grid, .video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .game-card {
+      position: relative;
+      display: flex;
+      min-height: 190px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      overflow: hidden;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(145deg, rgb(255 255 255 / 4%), transparent 58%), var(--surface);
+      text-align: center;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+    .game-card::before {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, var(--game-glow), transparent 70%);
+      content: "";
+      opacity: .8;
+      pointer-events: none;
+    }
+    .game-emblem {
+      position: relative;
+      display: grid;
+      width: 70px;
+      height: 70px;
+      place-items: center;
+      border: 1px solid var(--game-accent);
+      border-radius: 50%;
+      color: var(--game-accent);
+      font: 600 38px/1 Georgia, serif;
+      text-shadow: 0 0 20px var(--game-glow);
+      box-shadow: 0 0 28px var(--game-glow), inset 0 0 20px var(--game-glow);
+    }
+    .game-card h3 {
+      position: relative;
+      margin: 0;
+      color: var(--game-accent);
+      font: 600 clamp(15px, 1.5vw, 19px)/1.3 var(--mono);
+      letter-spacing: .04em;
+      text-shadow: 0 0 18px var(--game-glow);
+    }
+    .game-genshin { --game-accent: #e9c98b; --game-glow: rgb(212 162 76 / 18%); }
+    .game-genshin .game-emblem { border-radius: 18px 18px 50% 50%; }
+    .game-wuthering { --game-accent: #94d8e1; --game-glow: rgb(55 162 180 / 18%); }
+    .game-wuthering .game-emblem { border-radius: 18px 50%; }
+    .game-valorant { --game-accent: #ff6a73; --game-glow: rgb(230 55 72 / 18%); }
+    .game-valorant .game-emblem { border-radius: 12px; font-family: var(--sans); font-weight: 900; }
+    .game-growtopia { --game-accent: #9ee28b; --game-glow: rgb(88 190 82 / 18%); }
+    .game-growtopia .game-emblem { border-radius: 22px; font-family: var(--sans); font-weight: 800; }
+    .game-starrail { --game-accent: #c5a7ff; --game-glow: rgb(131 94 212 / 20%); }
+    .game-starrail .game-emblem { border-radius: 50% 50% 18px 18px; }
+    @media (hover: hover) {
+      .game-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--game-accent);
+        box-shadow: 0 14px 36px rgb(0 0 0 / 25%), 0 0 24px var(--game-glow);
+      }
+    }
+    .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .section-heading {
       display: flex;
       align-items: flex-end;
@@ -325,17 +383,22 @@
       #skills { padding-top: 40px; }
       .about-grid { grid-template-columns: 1fr; gap: 22px; }
       .profile-card { width: min(190px, 55vw); }
-      .skill-groups, .project-grid, .contact-grid { grid-template-columns: 1fr; }
+      .skill-groups, .contact-grid { grid-template-columns: 1fr; }
+      .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .game-card { min-height: 165px; padding: 18px 12px; }
+      .game-emblem { width: 58px; height: 58px; font-size: 32px; }
       .skill-group { min-height: 0; padding: 22px; }
       .chips { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); }
       .chip { min-height: 100px; }
       .skill-icon { width: 36px; height: 36px; }
-      .project-card { min-height: 0; padding: 24px; }
       .video-grid { grid-template-columns: 1fr; }
       .video-thumb { min-height: 220px; }
       .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
       footer .container { flex-direction: column; }
       .contact-dialog { padding: 20px; }
+    }
+    @media (max-width: 380px) {
+      .game-grid { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
