@@ -17,8 +17,13 @@
     body {
       margin: 0;
       background:
-        radial-gradient(ellipse at 50% -24%, rgb(61 92 150 / 13%), transparent 55%),
+        radial-gradient(ellipse 75% 55% at 12% 4%, rgb(67 102 169 / 16%), transparent 75%),
+        radial-gradient(ellipse 55% 45% at 92% 36%, rgb(118 78 163 / 9%), transparent 75%),
+        radial-gradient(ellipse 70% 45% at 52% 100%, rgb(40 95 106 / 8%), transparent 78%),
+        linear-gradient(rgb(120 169 255 / 2%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(120 169 255 / 2%) 1px, transparent 1px),
         var(--bg);
+      background-size: auto, auto, auto, 56px 56px, 56px 56px, auto;
       color: var(--text);
       font: 16px/1.7 var(--sans);
     }
