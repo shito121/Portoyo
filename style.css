@@ -58,7 +58,7 @@
       text-decoration: none;
       transition: color 160ms ease;
     }
-    .site-nav a:hover, .site-nav button:hover { color: var(--blue); }
+    .site-nav a:hover, .site-nav a[aria-current="location"], .site-nav button:hover { color: var(--blue); }
     .site-nav .nav-contact {
       padding: 0;
       border: 0;
